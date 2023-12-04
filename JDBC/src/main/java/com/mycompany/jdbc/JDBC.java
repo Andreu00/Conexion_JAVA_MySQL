@@ -14,9 +14,9 @@ public class JDBC {
     public static void main(String[] args) {
        
         try(
-            Connection conn=DriverManager.getConnection(DB_URL, USER, PASS);
-            Statement stmt =conn.createStatement();
-            ResultSet rs =stmt.executeQuery(QUERY);)
+            Connection conn=DriverManager.getConnection(DB_URL, USER, PASS);//Establecemos la conexion con la base de datos
+            Statement stmt =conn.createStatement();//Creamos la sentencia SQL
+            ResultSet rs =stmt.executeQuery(QUERY);)//Ejecuta la consulta que le indicamos
         {
             while(rs.next()){
                 System.out.println("ID: "+rs.getInt("id"));
